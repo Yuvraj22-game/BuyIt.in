@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+  }
+  
+  header {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  @keyframes hueRotate {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  header h1 {
+    font-size: 1.75rem;
+    cursor: pointer;
+    animation: hueRotate 6s infinite linear, bounce 2.5s infinite ease-in-out;
+  }
+  
+  #search {
+    padding: 0.5rem;
+    width: 220px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  #search:focus {
+    outline: none;
+    border-color: #ff7e5f;
+  }
+  
+  main {
+    display: flex;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+  
+  #products, #cart {
+    flex: 1;
+  }
+  
+  .product, .cart-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .product:hover, .cart-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  button, #checkout {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+  }
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  .product button {
+    background: #ff7e5f;
+    color: #fff;
+  }
+  .cart-item button {
+    background: #dc3545;
+    color: #fff;
+  }
+  .product button:hover {
+    background: #feb47b;
+  }
+  .cart-item button:hover {
+    background: #c82333;
+  }
+  
+  #checkout {
+    background: #28a745;
+    color: #fff;
+    box-shadow: 0 0 0 rgba(40,167,69,0.7);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(40,167,69,0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(40,167,69,0); }
+    100% { box-shadow: 0 0 0 0 rgba(40,167,69,0); }
+  }
+  
